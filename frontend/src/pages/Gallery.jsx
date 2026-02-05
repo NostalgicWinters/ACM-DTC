@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";   // adjust path if needed
+import Navbar from "../components/NavBar";   // adjust path if needed
 import Footer from "../components/Footer";   // adjust path if needed
 
 

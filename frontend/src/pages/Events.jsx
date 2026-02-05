@@ -78,7 +78,7 @@ function Events() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {events.map((event, index) => (
             <div key={index} className="flex justify-center">
-              <div className="group relative bg-[#EAF2FA] p-6 rounded-xl shadow-md overflow-hidden hover:scale-125">
+              <div className="group relative bg-[#EAF2FA] p-6 rounded-xl shadow-md overflow-hidden hover:scale-125 hover:cursor-pointer">
 
                 <img
                   src={event.image}
