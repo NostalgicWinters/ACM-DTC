@@ -1,15 +1,39 @@
+import { useEffect, useRef, useState } from "react";
+
 function AboutUsCards({ number, title, displayImage, content }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="bg-white rounded-2xl shadow-md p-4 w-75 hover:shadow-xl transition duration-300">
-      
+    <div
+      ref={ref}
+      className={`
+        bg-white rounded-2xl shadow-md p-4 w-75
+        transition-all duration-700 ease-out
+        ${visible ? "translate-x-0 opacity-100" : "translate-x-32 opacity-0"}
+      `}
+    >
       {/* Header */}
       <div className="flex items-center gap-2 mb-2">
         <span className="text-gray-400 text-sm font-medium">
-          {String(number).padStart(2, "0")}
+          {number}
         </span>
-        <h3 className="text-lg font-semibold uppercase">
-          {title}
-        </h3>
+        <h3 className="text-lg font-semibold uppercase">{title}</h3>
       </div>
 
       <hr className="mb-3 border-gray-200" />
