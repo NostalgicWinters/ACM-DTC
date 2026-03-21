@@ -50,7 +50,7 @@ function Footer() {
 
             <div className="flex flex-row justify-start gap-2 align-middle p-2">
               <img src={linkedIn} />
-              <a href="#" className="hover:text-blue-600">LinkedIn</a>
+              <a href="https://www.linkedin.com/company/acm-student-chapter-delhi-technical-campus-ggsipu/" className="hover:text-blue-600">LinkedIn</a>
             </div>
 
             <div className="flex flex-row justify-start gap-2 p-2">
@@ -60,7 +60,7 @@ function Footer() {
 
             <div className="flex flex-row justify-start gap-2 align-middle p-2">
               <img src={instagram} />
-              <a href="#" className="hover:text-blue-600">Instagram</a>
+              <a href="https://www.instagram.com/acm_dtc/" className="hover:text-blue-600">Instagram</a>
             </div>
 
             <div className="flex flex-row justify-start gap-2 align-middle p-2">
