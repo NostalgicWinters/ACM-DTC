@@ -304,6 +304,32 @@ function Home() {
     </div>
   </div>
 </section>
+
+<section className="bg-white py-20 px-6">
+  <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
+
+    {/* Heading */}
+    <h2 className="text-4xl md:text-5xl font-extrabold text-center">
+      SUBSCRIBE TO OUR NEWSLETTER
+    </h2>
+
+    {/* Input + Button */}
+    <div className="w-full flex flex-col md:flex-row items-center gap-4 bg-gray-100 p-4 rounded-xl shadow-sm">
+
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="flex-1 w-full px-4 py-3 rounded-lg outline-none bg-white border border-gray-300"
+      />
+
+      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition w-full md:w-auto">
+        Subscribe
+      </button>
+
+    </div>
+
+  </div>
+</section>
             
         </div>
     );
