@@ -12,6 +12,11 @@ import event4 from '../assets/Events/event4.png'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import president from "../assets/Team/President.jpg"
+import powerbi from "../assets/pdfs/powerbi.png"
+import excel from "../assets/pdfs/excel.png"
+import sixsigma from "../assets/pdfs/sixsigma.png"
+import sql from "../assets/pdfs/sql.png"
 
 function Home() {
 
@@ -160,7 +165,7 @@ function Home() {
 
             <section>
                 <header className="text-5xl font-bold text-center">Check Out Our Recent Events</header>
-                <div className="w-full mt-16 border-y-2 py-6">
+                <div className="w-full m-16 border-y-2 py-6">
                     <Swiper
                         modules={[Autoplay]}
                         loop
@@ -188,6 +193,117 @@ function Home() {
                 </div>
             </section>
 
+
+            <section>
+                <div className="h-screen w-screen">
+                    <header className="text-5xl font-bold text-center">AWARDS AND ACHIEVMENTS</header>
+                </div>
+            </section>
+
+            <section className="bg-gray-100 py-20 px-6">
+  <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
+
+    {/* Heading */}
+    <h2 className="text-5xl font-extrabold text-center">
+      MEET OUR <span className="text-blue-600">PRESIDENT</span>
+    </h2>
+
+    {/* Content */}
+    <div className="w-full flex flex-col md:flex-row items-center justify-between gap-10">
+
+      {/* Left Placeholder / Content Box */}
+      <div className="w-full md:w-[65%] h-62.5 md:h-75 bg-gray-300 rounded-3xl">
+        {/* You can add text/content here later */}
+      </div>
+
+      {/* President Image */}
+      <div className="w-full md:w-[30%] flex justify-center">
+        <img
+          src={president}
+          alt="President"
+          className="w-62.5 md:w-75 h-75 object-cover rounded-md shadow-lg"
+        />
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section className="bg-gray-100 py-20 px-6">
+  <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
+
+    {/* Heading */}
+    <h2 className="text-5xl font-extrabold text-center">
+      HERE ARE SOME <span className="text-blue-600">HELPFUL</span> <br />
+      RESOURCES
+    </h2>
+
+    {/* Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+
+      {/* Left Tall Card */}
+      <div className="rounded-2xl overflow-hidden border border-blue-200 relative group">
+        <img
+          src={powerbi}
+          alt="Power BI"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
+        <p className="absolute bottom-4 left-4 text-white font-semibold text-lg">
+          POWER BI <br /> RESOURCES
+        </p>
+      </div>
+
+      {/* Right Side */}
+      <div className="md:col-span-2 flex flex-col gap-6">
+
+        {/* Top Wide Card */}
+        <div className="rounded-2xl overflow-hidden border border-blue-200 relative">
+          <img
+            src={sql}
+            alt="SQL"
+            className="w-full h-45 object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
+          <p className="absolute bottom-4 left-4 text-white font-semibold text-lg">
+            SQL CHEATSHEET
+          </p>
+        </div>
+
+        {/* Bottom Two Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <div className="rounded-2xl overflow-hidden border border-blue-200 relative">
+            <img
+              src={sixsigma}
+              alt="Six Sigma"
+              className="w-full h-40 object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-white font-semibold text-lg">
+              SIX SIGMA <br /> GUIDANCE
+            </p>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden border border-blue-200 relative">
+            <img
+              src={excel}
+              alt="Excel"
+              className="w-full h-40 object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-white font-semibold text-lg">
+              TOP 50 EXCEL <br /> QUESTIONS
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
             
         </div>
     );
