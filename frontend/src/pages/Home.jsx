@@ -17,6 +17,7 @@ import powerbi from "../assets/pdfs/powerbi.png"
 import excel from "../assets/pdfs/excel.png"
 import sixsigma from "../assets/pdfs/sixsigma.png"
 import sql from "../assets/pdfs/sql.png"
+import Footer from "../components/Footer";
 
 function Home() {
 
@@ -330,6 +331,8 @@ function Home() {
 
   </div>
 </section>
+
+<Footer />
             
         </div>
     );
