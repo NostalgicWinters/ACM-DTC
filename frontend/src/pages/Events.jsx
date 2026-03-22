@@ -49,7 +49,7 @@ function Events() {
             disableOnInteraction: false,
           }}
           allowTouchMove={false}
-          className="h-[200px] md:h-[300px] lg:h-[400px]"
+          className="h-50 md:h-75 lg:h-100"
         >
           {events.map((event, index) => (
             <SwiperSlide key={index}>
@@ -83,7 +83,7 @@ function Events() {
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="h-[360px] w-auto object-contain
+                  className="h-90 w-auto object-contain
         transition-all duration-500
         group-hover:scale-110
         group-hover:brightness-50"
