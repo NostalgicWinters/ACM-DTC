@@ -104,13 +104,13 @@ function Home() {
                     className={`
       mt-12 md:mt-0
       transition-all duration-[2500ms] ease-out delay-200
-      ${show ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}
+      ${show ? "translate-y-0 opacity-100" : "translate-y-32 opacity-0"}
     `}
                 >
                     <img
                         src={techguy}
                         alt="Tech Guy"
-                        className="w-[300px] md:w-[450px] object-contain"
+                        className="w-120 md:w-175 object-contain"
                     />
                 </div>
 
