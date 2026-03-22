@@ -249,7 +249,7 @@ function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
 
                         {/* Left Tall Card */}
-                        <div className="rounded-2xl overflow-hidden border-16 border-white relative group">
+                        <div className="rounded-2xl overflow-hidden border-16 border-white relative group hover:cursor-pointer">
                             <img
                                 src={powerbi}
                                 alt="Power BI"
@@ -265,7 +265,7 @@ function Home() {
                         <div className="md:col-span-2 flex flex-col gap-6">
 
                             {/* Top Wide Card */}
-                            <div className="rounded-2xl overflow-hidden border-16 border-white relative">
+                            <div className="rounded-2xl overflow-hidden border-16 border-white relative hover:cursor-pointer">
                                 <img
                                     src={sql}
                                     alt="SQL"
@@ -280,7 +280,7 @@ function Home() {
                             {/* Bottom Two Cards */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                                <div className="rounded-2xl overflow-hidden border-16 border-white relative">
+                                <div className="rounded-2xl overflow-hidden border-16 border-white relative hover:cursor-pointer">
                                     <img
                                         src={sixsigma}
                                         alt="Six Sigma"
@@ -292,7 +292,7 @@ function Home() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-2xl overflow-hidden border-16 border-white relative">
+                                <div className="rounded-2xl overflow-hidden border-16 border-white relative hover:cursor-pointer">
                                     <img
                                         src={excel}
                                         alt="Excel"

@@ -104,7 +104,7 @@ function About() {
                         {cards.map((card, index) => (
                             <div
                                 key={index}
-                                style={{ transitionDelay: `${index * 8000}ms` }}
+                                style={{ transitionDelay: `${index * 10000}ms` }}
                             >
                                 <AboutUsCards
                                     title={card.title}
