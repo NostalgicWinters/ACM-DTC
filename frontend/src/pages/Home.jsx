@@ -20,6 +20,7 @@ import sql from "../assets/pdfs/sql.png"
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import CursorGrid from "../components/CursorGrid";
+import TeamSection from "../components/TeamSection";
 
 function Home() {
 
@@ -166,15 +167,7 @@ function Home() {
                 </div>
             </section>
 
-            <section>
-                <div className="flex flex-col justify-center items-center h-screen w-screen">
-                    <header className="text-7xl font-bold">
-                        MEET OUR <span className="text-blue-600">AMAZING</span><br />
-                        MENTOR AND TEAM
-                    </header>
-                    <p className="text-3xl font-bold">Still faces, Infinite Stories</p>
-                </div>
-            </section>
+            <TeamSection />
 
             <section>
                 <header className="text-5xl font-bold text-center">Check Out Our Recent Events</header>
