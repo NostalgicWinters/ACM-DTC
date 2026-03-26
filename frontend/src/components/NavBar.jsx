@@ -19,8 +19,7 @@ function NavBar() {
           <div className="flex items-center gap-2">
             <img src={logo} alt="ACM Logo" className="w-20 sm:w-24" />
             <p className="hidden sm:block text-black text-xs sm:text-sm font-semibold leading-tight">
-              Association for <br />
-              Computing Machinery
+              ACM-DTC
             </p>
           </div>
 

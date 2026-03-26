@@ -21,85 +21,119 @@ const JoinUs = () => {
           background: #fff;
           display: flex;
           flex-direction: column;
+          overflow-x: hidden;
         }
 
         .joinus-content {
           max-width: 1400px;
           margin: auto;
-          padding: 40px;
+          padding: 20px;
           display: flex;
           justify-content: space-between;
-          align-items: flex-end;
+          align-items: center;
           flex: 1;
+          gap: 40px;
         }
 
         .hero-container {
           flex: 1;
           display: flex;
-          align-items: flex-end;
+          justify-content: center;
+          align-items: center;
         }
 
         .hero-container img {
           width: 100%;
-          max-width: 520px;
+          max-width: 420px;
+          height: auto;
           object-fit: contain;
         }
 
         .joinus-card {
-          width: 420px;
+          width: 100%;
+          max-width: 400px;
           background: linear-gradient(180deg, #ffffff, #999999);
-          border-radius: 25px;
-          padding: 30px;
+          border-radius: 20px;
+          padding: 20px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 14px;
+          gap: 12px;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .card-logo {
-          width: 200px;
-          height: 150px;
+          width: 140px;
+          height: auto;
         }
 
         .card-title {
           color: #3374cc;
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 600;
-          margin-bottom: 10px;
+          text-align: center;
         }
 
         .joinus-btn {
           width: 100%;
-          height: 52px;
+          height: 48px;
           border-radius: 30px;
           border: none;
           background: rgba(255, 255, 255, 0.35);
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 12px;
-          font-size: 15px;
+          gap: 10px;
+          font-size: 14px;
           cursor: pointer;
           transition: all 0.25s ease;
         }
 
         .joinus-btn:hover {
           background: rgba(255, 255, 255, 0.55);
+          transform: scale(1.03);
         }
 
         .joinus-btn span {
-          font-size: 18px;
+          font-size: 16px;
         }
 
+        /* TABLET */
         @media (max-width: 1024px) {
           .joinus-content {
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            text-align: center;
           }
 
           .hero-container img {
-            max-width: 420px;
+            max-width: 320px;
+          }
+        }
+
+        /* MOBILE */
+        @media (max-width: 640px) {
+          .joinus-content {
+            padding: 16px;
+            gap: 30px;
+          }
+
+          .hero-container img {
+            max-width: 260px;
+          }
+
+          .joinus-card {
+            padding: 16px;
+            border-radius: 16px;
+          }
+
+          .card-logo {
+            width: 110px;
+          }
+
+          .joinus-btn {
+            height: 44px;
+            font-size: 13px;
           }
         }
       `}</style>
@@ -109,42 +143,47 @@ const JoinUs = () => {
         <NavBar />
 
         <div className="joinus-content">
+          {/* HERO IMAGE */}
           <div className="hero-container">
             <img src={heroImg} alt="Robot" />
           </div>
 
+          {/* CARD */}
           <div className="joinus-card">
             <img src={acmLogo} alt="ACM" className="card-logo" />
             <p className="card-title">ACM DELHI TECHNICAL CAMPUS</p>
 
-           
             <ActionButton
               text="Whatsapp"
               icon={<FaWhatsapp />}
               link="https://wa.me/XXXXXXXXXX"
             />
+
             <ActionButton
               text="LinkedIn"
               icon={<FaLinkedinIn />}
               link="https://www.linkedin.com/company/acm-student-chapter-delhi-technical-campus-ggsipu/posts/?feedView=all"
             />
-           
+
             <ActionButton
               text="Instagram"
               icon={<FaInstagram />}
               link="https://www.instagram.com/acm_dtc/"
             />
-             <ActionButton
+
+            <ActionButton
               text="X"
               icon={<FaXTwitter />}
               link="https://twitter.com/acm"
             />
+
             <ActionButton
               text="Linktree"
               icon={<SiLinktree />}
               link="https://linktr.ee/acm"
             />
-             <ActionButton
+
+            <ActionButton
               text="Become an ACM Member"
               link="https://www.acm.org/membership"
             />
@@ -155,7 +194,7 @@ const JoinUs = () => {
   );
 };
 
-/* 🔹 Reusable Button Component */
+/* 🔹 Reusable Button */
 const ActionButton = ({ text, icon, link }) => (
   <button
     className="joinus-btn"

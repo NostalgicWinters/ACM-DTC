@@ -26,7 +26,7 @@ function AboutUsCards({ number, title, displayImage, content }) {
         bg-white rounded-2xl shadow-md p-4 w-75
         transition-all duration-700 ease-out
         ${visible ? "translate-x-0 opacity-100" : "translate-x-32 opacity-0"}
-      `}
+      hover:cursor-pointer hover:scale-110`}
     >
       {/* Header */}
       <div className="flex items-center gap-2 mb-2">

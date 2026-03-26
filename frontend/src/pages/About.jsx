@@ -34,126 +34,121 @@ function About() {
     ]
 
     return (
-        <div className="bg-white min-h-screen">
-            <CursorGrid />
-            <NavBar />
+    <div className="bg-white min-h-screen overflow-x-hidden">
+      <CursorGrid />
+      <NavBar />
 
-            {/* Introduction */}
-            <div className="flex flex-row justify-between items-center p-4">
-                <img src={robotRight} className="w-32 md:w-48 object-contain" />
-                <div className="flex items-center flex-col gap-8 relative">
-                    <header className="text-5xl font-bold text-center leading-tight">
-                        Association For Computing
-                        <br />
-                        Machinery
-                    </header>
-                    <span className="block h-0.5 bg-black w-[80%]" />
-                    <p className="px-10 text-center text-gray-600 max-w-2xl leading-relaxed">
-                        The Association for Computing Machinery (ACM) is an international
-                        learned society for computing. Founded in 1947, it is the world's
-                        largest scientific and educational computing society — a not-for-profit
-                        professional membership group with over 100,000 members worldwide.
-                    </p>
-                </div>
-                <img src={robotLeft} className="w-32 md:w-48 object-contain" />
+      {/* INTRO */}
+      <div className="flex flex-col md:flex-row items-center justify-between px-4 py-8 gap-6">
+
+        <img src={robotRight} className="w-24 sm:w-32 md:w-40 object-contain" />
+
+        <div className="flex flex-col items-center gap-6 text-center max-w-2xl">
+          <header className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
+            Association For Computing
+            <br />
+            Machinery
+          </header>
+
+          <span className="block h-0.5 bg-black w-3/4" />
+
+          <p className="px-2 sm:px-6 text-gray-600 text-sm sm:text-base">
+            The Association for Computing Machinery (ACM) is an international learned society for computing. It was founded in 1947 and is the world's largest scientific and educational computing society. It is a not-for-profit professional membership group. Its membership is more than 100,000 as of 2011. Its headquarters are in New York City. The ACM is an umbrella organization for academic and scholarly interests in computer science.
+          </p>
+        </div>
+
+        <img src={robotLeft} className="w-24 sm:w-32 md:w-40 object-contain" />
+      </div>
+
+      {/* ABOUT SECTION */}
+      <section className="bg-gray-50 py-12 sm:py-16 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
+              About Us
+            </h2>
+
+            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
+              DTC ACM Student Chapter believes in providing a healthy environment where creativity and imagination can flourish. Through collaboration and engagement in a plethora of technical activities and projects, we envision to build a community of like-minded people who love to code, collaborate and have fun!
+
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="bg-white rounded-2xl overflow-hidden aspect-video border-8 sm:border-12 md:border-16 border-gray-200">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/iik25wqIuFo"
+                allowFullScreen
+              />
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* About Us */}
-            <section className="bg-gray-50 mt-16 py-20 px-6">
-                <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      {/* CARDS */}
+      <section className="py-12 px-4">
+        <div className="flex flex-col items-center gap-6">
 
-                    {/* Text Block */}
-                    <div className="flex flex-col gap-6">
+          <header className="text-2xl sm:text-3xl md:text-5xl font-bold text-center">
+            <span className="text-blue-600">DTC</span> ACM STUDENT CHAPTER
+          </header>
 
-                        <h2 className="text-5xl font-bold tracking-tight leading-none">
-                            About Us
-                        </h2>
+          <span className="block h-0.5 bg-black w-2/3 sm:w-1/2" />
 
-                        <p className="text-gray-500 text-base leading-relaxed max-w-sm">
-                            DTC ACM Student Chapter believes in providing a healthy environment
-                            where creativity and imagination can flourish. Through collaboration
-                            and engagement in a plethora of technical activities and projects, we
-                            envision to build a community of like-minded people who love to code,
-                            collaborate, and have fun!
-                        </p>
-                    </div>
-
-                    {/* Video Card */}
-                    <div className="relative group">
-
-                        <div className="relative bg-white rounded-2xl overflow-hidden aspect-video border-16 border-gray-200 transition-transform duration-300 group-hover:-translate-y-1 group-hover:-translate-x-1">
-                            <iframe
-                                className="w-full h-full"
-                                src="https://www.youtube.com/embed/iik25wqIuFo"
-                                title="DTC ACM Chapter Video"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <section>
-                <div className="flex flex-col items-center justify-center">
-                    <header className="text-5xl font-bold"><span className="text-blue-600">DTC</span> ACM STUDENT CHAPTER</header>
-                    <span className="block h-0.5 bg-black w-[70%] mt-8" />
-
-                    <div className="flex gap-8">
-                        {cards.map((card, index) => (
-                            <div
-                                key={index}
-                                style={{ transitionDelay: `${index * 10000}ms` }}
-                            >
-                                <AboutUsCards
-                                    title={card.title}
-                                    number={card.number}
-                                    displayImage={card.image}
-                                    content={card.content}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <section className="relative w-full h-screen overflow-hidden my-8">
-                <img
-                    src={wallpaper}
-                    alt="ACM Group"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute right-12 top-1/2 -translate-y-1/2 bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-md w-full shadow-2xl">
-                    <h2 className="text-white text-4xl font-extrabold leading-tight mb-3">
-                        BECOME A<br />MEMBER OF ACM
-                    </h2>
-                    <div className="h-0.5 bg-white/40 mb-4" />
-                    <p className="text-white/90 text-sm leading-relaxed mb-6">
-                        A vast network of nearly 100,000 highly dedicated student and
-                        professional peers. A full year subscription to ACM magazines and
-                        news letters (Communications of the ACM, XRDS: Crossroads,
-                        MemberNet etc.). The option to subscribe to the full ACM Digital
-                        Library, which includes over 2 million pages of text.{" "}
-                        <span className="underline cursor-pointer">Become a member</span> of
-                        computing community through one of hundreds of Professional and
-                        Student Chapters worldwide. Participation in ACM Distinguished
-                        Speakers Program (DSP). Unique volunteering opportunities to gain
-                        hands-on experience and knowledge of the marketplace.
-                    </p>
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-colors duration-200">
-                        Join ACM
-                    </button>
-                </div>
-            </section>
-
-
-
-            <Footer />
+          {/* RESPONSIVE GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
+            {cards.map((card, index) => (
+              <AboutUsCards
+                key={index}
+                title={card.title}
+                number={card.number}
+                displayImage={card.image}
+                content={card.content}
+              />
+            ))}
+          </div>
 
         </div>
-    );
+      </section>
+
+      {/* MEMBERSHIP SECTION */}
+      <section className="relative w-full min-h-[70vh] sm:min-h-screen overflow-hidden my-8">
+
+        <img
+          src={wallpaper}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* CONTENT BOX */}
+        <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+
+          <div className="bg-white/20 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 w-full max-w-md shadow-xl">
+
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+              BECOME A MEMBER OF ACM
+            </h2>
+
+            <div className="h-0.5 bg-white/40 mb-4" />
+
+            <p className="text-white text-xs sm:text-sm mb-5 leading-relaxed">
+              A vast network of nearly 100,000 highly dedicated student and professional peers...
+            </p>
+
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 rounded-lg">
+              Join ACM
+            </button>
+
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
 }
 
 export default About;
