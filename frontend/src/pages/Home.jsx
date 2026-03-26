@@ -25,6 +25,7 @@ import sql from "../assets/pdfs/sql.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { NavLink } from "react-router";
 
 function Home() {
   const [show, setShow] = useState(false);
@@ -69,11 +70,12 @@ function Home() {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <button className="bg-blue-600 text-white px-5 py-2 rounded-lg">
-              Join Us
+            <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:cursor-pointer">
+                <NavLink to="/joinus" >Join Us</NavLink>
+              
             </button>
-            <button className="border border-blue-600 text-blue-600 px-5 py-2 rounded-lg">
-              Know More
+            <button className="border border-blue-600 text-blue-600 px-5 py-2 rounded-lg cursor-pointer">
+                <NavLink to="/about" >Know More</NavLink>
             </button>
           </div>
 
