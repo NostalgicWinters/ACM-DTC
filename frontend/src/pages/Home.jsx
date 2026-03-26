@@ -184,7 +184,7 @@ function Home() {
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
 
     {/* POWER BI */}
-    <a href="https://your-powerbi-link.com" target="_blank">
+    <a href="/resources-pdf/resources_🌟 Power BI Interview Questions and Answers 🌟.pdf" target="_blank">
       <div className="relative group overflow-hidden rounded-xl">
         <img
           src={powerbi}
@@ -201,7 +201,7 @@ function Home() {
     <div className="flex flex-col gap-4 md:col-span-2">
 
       {/* SQL */}
-      <a href="https://your-sql-link.com" target="_blank">
+      <a href="/resources-pdf/resources_SQL_Cheatsheet.pdf" target="_blank">
         <div className="relative group overflow-hidden rounded-xl">
           <img
             src={sql}
@@ -218,7 +218,7 @@ function Home() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
         {/* SIX SIGMA */}
-        <a href="https://your-sixsigma-link.com" target="_blank">
+        <a href="https://www.tutorialspoint.com/six_sigma/pdf/six_sigma_quick_guide.pdf" target="_blank">
           <div className="relative group overflow-hidden rounded-xl">
             <img
               src={sixsigma}
@@ -232,7 +232,7 @@ function Home() {
         </a>
 
         {/* EXCEL */}
-        <a href="https://your-excel-link.com" target="_blank">
+        <a href="/resources-pdf/resources_Top 50 Excel questions .pdf" target="_blank">
           <div className="relative group overflow-hidden rounded-xl">
             <img
               src={excel}
