@@ -1,8 +1,15 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { useState } from "react";
 
 function TeamCarousel({ team }) {
+
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  const handleFlip = (index) => {
+    setFlippedIndex((prev) => (prev === index ? null : index));
+  };
   return (
     <section className="w-full py-20 bg-white">
       <h1 className="text-5xl font-bold text-center my-24">
@@ -24,13 +31,19 @@ function TeamCarousel({ team }) {
       >
         {team.map((member, index) => (
           <SwiperSlide key={index}>
-            
+
             {/* CARD */}
-            <div className="group h-[420px] [perspective:1000px]">
-              
+            <div className="group h-[420px] [perspective:1000px]" onClick={() => handleFlip(index)}>
+
               {/* INNER */}
-              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                
+              <div className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]
+              ${
+      flippedIndex === index
+        ? "[transform:rotateY(180deg)]"
+        : "group-hover:[transform:rotateY(180deg)]"
+    }`}
+              >
+
                 {/* FRONT */}
                 <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl overflow-hidden">
                   <img
@@ -50,40 +63,40 @@ function TeamCarousel({ team }) {
                 </div>
 
                 {/* BACK */}
-<div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl overflow-hidden">
-  
-  {/* Background image (mirrored + blurred) */}
-  <img
-    src={member.image}
-    alt=""
-    className="absolute inset-0 w-full h-full object-cover scale-x-[-1] blur-md brightness-50"
-  />
+                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl overflow-hidden">
 
-  {/* Overlay content */}
-  <div className="relative z-10 w-full h-full flex items-center justify-center p-4 text-white">
-    <div className="text-center">
-      <p className="italic mb-4">"{member.quote}"</p>
+                  {/* Background image (mirrored + blurred) */}
+                  <img
+                    src={member.image}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover scale-x-[-1] blur-md brightness-50"
+                  />
 
-      <div className="flex flex-col gap-2 text-sm">
-        <a
-          href={member.linkedin}
-          target="_blank"
-          className="underline"
-        >
-          LinkedIn
-        </a>
+                  {/* Overlay content */}
+                  <div className="relative z-10 w-full h-full flex items-center justify-center p-4 text-white">
+                    <div className="text-center">
+                      <p className="italic mb-4">"{member.quote}"</p>
 
-        <a
-          href={`mailto:${member.email}`}
-          className="underline"
-        >
-          {member.email}
-        </a>
-      </div>
-    </div>
-  </div>
+                      <div className="flex flex-col gap-2 text-sm">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          className="underline"
+                        >
+                          LinkedIn
+                        </a>
 
-</div>
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="underline"
+                        >
+                          {member.email}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
 
               </div>
             </div>
