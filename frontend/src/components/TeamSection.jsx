@@ -43,7 +43,7 @@ function TeamSection() {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onMouseMove={handleMove}
-      className="relative"
+      className="relative sm:hidden"
     >
 
       {/* TEXT CONTENT */}
