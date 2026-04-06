@@ -16,16 +16,20 @@ import event3 from "../assets/Events/event3.png";
 import event4 from "../assets/Events/event4.png";
 
 import president from "../assets/Team/President.jpg";
+import vpImage from "../assets/Team/Vice-president.png";
+import secretaryImage from "../assets/Team/Secretary.png"
 
-import powerbi from "../assets/pdfs/powerbi.png";
-import excel from "../assets/pdfs/excel.png";
-import sixsigma from "../assets/pdfs/sixsigma.png";
-import sql from "../assets/pdfs/sql.png";
+import powerbi from "../assets/resources/resource2.jpg";
+import ai from "../assets/resources/resource1.jpg";
+import web from "../assets/resources/resource4.jpg";
+import dsa from "../assets/resources/resource3.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { NavLink } from "react-router";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function Home() {
   const [show, setShow] = useState(false);
@@ -39,6 +43,61 @@ function Home() {
     { image: event2 },
     { image: event3 },
     { image: event4 },
+  ];
+
+  const teamMembers = [
+  {
+    name: "Chairperson",
+    image: president,
+    description: "Join us: where ideas are big, budgets are small, and confidence is completely unjustified",
+  },
+  {
+    name: "Vice President",
+    image: vpImage,
+    description: "We aim for excellence—but we’ll settle for passing attendance and decent chai.",
+  },
+  {
+    name: "Secretary",
+    image: secretaryImage,
+    description: "This society runs on passion, chaos, and last-minute WhatsApp messages.",
+  },
+];
+
+const [index, setIndex] = useState(0);
+
+  const prevSlide = () => {
+    setIndex((prev) => (prev === 0 ? teamMembers.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev === teamMembers.length - 1 ? 0 : prev + 1));
+  };
+
+  const resourcesData = [
+    {
+      title: "Power BI Interview Questions",
+      subtitle: "PDF • Interview Prep",
+      image: powerbi,
+      link: "/resources-pdf/resources_🌟 Power BI Interview Questions and Answers 🌟.pdf",
+    },
+    {
+      title: "Power BI Resources",
+      subtitle: "PDF • Analytics",
+      image: ai,
+      link: "/resources-pdf/resources_Power BI Resources.pdf",
+    },
+    {
+      title: "SQL Cheatsheet",
+      subtitle: "PDF • Databases",
+      image: web,
+      link: "/resources-pdf/resources_SQL_Cheatsheet.pdf",
+    },
+    {
+      title: "Top 50 Excel Questions",
+      subtitle: "PDF • Productivity",
+      image: dsa,
+      link: "/resources-pdf/resources_Top 50 Excel questions .pdf",
+    },
   ];
 
   return (
@@ -161,96 +220,77 @@ function Home() {
                 </div>
             </section>
 
-      {/* PRESIDENT */}
-      <section className="bg-gray-100 py-16 px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">
-          PRESIDENT
-        </h2>
+      {/* Core Team */}
+      <section className="bg-gray-100 py-16 px-4 relative">
+      <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">
+        CORE TEAM
+      </h2>
 
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-          <div className="w-full md:w-[65%] min-h-[200px] bg-gray-300 rounded-2xl"></div>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 relative">
+        
+        {/* Left Arrow */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-3 rounded-full"
+        >
+          <ChevronLeft size={24} />
+        </button>
 
-          <img
-            src={president}
-            className="w-48 sm:w-60 md:w-72 rounded-lg"
-          />
+        {/* Content */}
+        <div className="w-full md:w-[65%] min-h-[200px] bg-gray-300 rounded-2xl flex flex-col justify-center items-center p-6">
+          <h3 className="text-2xl font-semibold mb-2">
+            {teamMembers[index].name}
+          </h3>
+          <p className="text-gray-700 text-center italic">
+            "
+            {teamMembers[index].description}
+            "
+          </p>
         </div>
-      </section>
 
-      {/* RESOURCES */}
-      <section className="bg-gray-200 py-16 px-4">
-  <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">
-    RESOURCES
-  </h2>
-
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-
-    {/* POWER BI */}
-    <a href="/resources-pdf/resources_🌟 Power BI Interview Questions and Answers 🌟.pdf" target="_blank">
-      <div className="relative group overflow-hidden rounded-xl">
+        {/* Image */}
         <img
-          src={powerbi}
-          className="w-full h-52 object-cover transition duration-300 group-hover:scale-110"
+          src={teamMembers[index].image}
+          className="w-48 sm:w-60 md:w-72 rounded-lg transition-all duration-300"
+          alt={teamMembers[index].name}
         />
 
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
-          <p className="text-white text-lg font-semibold">POWER BI</p>
-        </div>
+        {/* Right Arrow */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-3 rounded-full"
+        >
+          <ChevronRight size={24} />
+        </button>
       </div>
-    </a>
+    </section>
 
-    {/* RIGHT SIDE */}
-    <div className="flex flex-col gap-4 md:col-span-2">
+      <section className="resources-page">
+        <h1 className="heading">
+          <span>Curated</span> resources to power your <br /> tech journey
+        </h1>
 
-      {/* SQL */}
-      <a href="/resources-pdf/resources_SQL_Cheatsheet.pdf" target="_blank">
-        <div className="relative group overflow-hidden rounded-xl">
-          <img
-            src={sql}
-            className="w-full h-40 object-cover transition duration-300 group-hover:scale-110"
-          />
+        <div className="resources-container">
+          {resourcesData.map((item, index) => (
+            <div key={index} className="resource-card">
+              <img src={item.image} alt={item.title} />
 
-          <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
-            <p className="text-white text-lg font-semibold">SQL Cheatsheet</p>
-          </div>
+              {/* INFO BAR — ONLY CLICKABLE PART */}
+              <div
+                className="resource-info"
+                onClick={() => window.open(item.link, "_blank")}
+              >
+                <div className="white-dot"></div>
+
+                <div className="text-group">
+                  <p className="resource-title">{item.title}</p>
+                  <p className="resource-subtitle">{item.subtitle}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </a>
-
-      {/* BOTTOM GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-        {/* SIX SIGMA */}
-        <a href="https://www.tutorialspoint.com/six_sigma/pdf/six_sigma_quick_guide.pdf" target="_blank">
-          <div className="relative group overflow-hidden rounded-xl">
-            <img
-              src={sixsigma}
-              className="w-full h-40 object-cover transition duration-300 group-hover:scale-110"
-            />
-
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
-              <p className="text-white text-lg font-semibold">SIX SIGMA Guidance</p>
-            </div>
-          </div>
-        </a>
-
-        {/* EXCEL */}
-        <a href="/resources-pdf/resources_Top 50 Excel questions .pdf" target="_blank">
-          <div className="relative group overflow-hidden rounded-xl">
-            <img
-              src={excel}
-              className="w-full h-40 object-cover transition duration-300 group-hover:scale-110"
-            />
-
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
-              <p className="text-white text-lg font-semibold"> Top 50 EXCEL Questions</p>
-            </div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* NEWSLETTER */}
       <section className="bg-white py-16 px-4">
@@ -273,6 +313,127 @@ function Home() {
       </section>
 
       <Footer />
+
+      {/* ================= STYLES ================= */}
+      <style>{`
+        .resources-page {
+          min-height: 100vh;
+          padding: 80px 5%;
+          background: #ffffff;
+          text-align: center;
+        }
+
+        .heading {
+          font-size: 42px;
+          font-weight: 700;
+          margin-bottom: 60px;
+          line-height: 1.2;
+        }
+
+        .heading span {
+          color: #0b5ed7;
+        }
+
+        .resources-container {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 24px;
+          flex-wrap: wrap;
+        }
+
+        /* ================= CARD ================= */
+        .resource-card {
+          width: 150px;
+          height: 340px;
+          border-radius: 70px;
+          overflow: hidden;
+          cursor: pointer;
+          position: relative;
+          background: #eaeaea;
+          transition: all 0.45s ease;
+        }
+
+        .resource-card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        /* ================= INFO BAR ================= */
+        .resource-info {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          padding: 14px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+          cursor: pointer;
+        }
+
+        /* WHITE DOT — ALWAYS VISIBLE */
+        .white-dot {
+          width: 14px;
+          height: 14px;
+          background: #ffffff;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+
+        /* TEXT — HIDDEN BY DEFAULT */
+        .text-group {
+          opacity: 0;
+          transform: translateX(-6px);
+          transition: all 0.3s ease;
+          text-align: left;
+        }
+
+        /* ================= HOVER EXPANSION ================= */
+        .resource-card:hover {
+          width: 370px;
+          height: 370px;
+          border-radius: 40px;
+          transform: translateY(-6px);
+        }
+
+        .resource-card:hover .text-group {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .resource-title {
+          font-size: 14px;
+          font-weight: 600;
+          color: #ffffff;
+          line-height: 1.2;
+        }
+
+        .resource-subtitle {
+          font-size: 12px;
+          color: #d1d1d1;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+          .resources-container {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .resource-card {
+            width: 98%;
+            height: 270px;
+            border-radius: 28px;
+          }
+
+          .resource-card:hover {
+          width: 98%;
+          height: 290px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
