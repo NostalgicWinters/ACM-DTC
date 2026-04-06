@@ -5,8 +5,8 @@ import bg from "../assets/Bg.jpg";
 import avatar1 from "../assets/Team/President.jpg";
 import avatar2 from "../assets/Team/Vice-president.png";
 import avatar3 from "../assets/Team/Secretary.png";
-import avatar4 from "../assets/Team/Membership.png";
-import avatar5 from "../assets/Team/Webmaster.jpg";
+import avatar4 from "../assets/Team/socialsomething.png";
+import avatar5 from "../assets/Team/event.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -18,11 +18,11 @@ import CursorGrid from "../components/CursorGrid";
 
 function Team() {
   const avatars = [
-    { image: avatar1, title: "Chairperson", name: "Kritagya Arora" },
-    { image: avatar2, title: "Vice-Chairperson", name: "Kovidh Nougain" },
-    { image: avatar3, title: "Secretary", name: "Ananya Tamta" },
-    { image: avatar4, title: "Membership", name: "Garv Saini" },
-    { image: avatar5, title: "Webmaster", name: "Aakarsh Mishra" },
+    { image: avatar1, title: "Chairperson", name: "Kritagya Arora", quote:"Join us: where ideas are big, budgets are small, and confidence is completely unjustified", linkedin:"#" },
+    { image: avatar2, title: "Vice-Chairperson", name: "Kovidh Nougain" , quote:"We aim for excellence—but we’ll settle for passing attendance and decent chai." },
+    { image: avatar3, title: "Secretary", name: "Ananya Tamta", quote:"This society runs on passion, chaos, and last-minute WhatsApp messages." },
+    { image: avatar4, title: "Social Head", name: "Milan", quote:"Join us. We have snacks… sometimes." },
+    { image: avatar5, title: "Event Coordinator", name: "Bhavya Bhushan", quote:"We don’t just think outside the box—we lost the box." },
   ];
 
   const [active, setActive] = useState(0);

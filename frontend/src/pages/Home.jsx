@@ -46,24 +46,24 @@ function Home() {
   ];
 
   const teamMembers = [
-  {
-    name: "Chairperson",
-    image: president,
-    description: "Join us: where ideas are big, budgets are small, and confidence is completely unjustified",
-  },
-  {
-    name: "Vice President",
-    image: vpImage,
-    description: "We aim for excellence—but we’ll settle for passing attendance and decent chai.",
-  },
-  {
-    name: "Secretary",
-    image: secretaryImage,
-    description: "This society runs on passion, chaos, and last-minute WhatsApp messages.",
-  },
-];
+    {
+      name: "Chairperson",
+      image: president,
+      description: "Join us: where ideas are big, budgets are small, and confidence is completely unjustified",
+    },
+    {
+      name: "Vice President",
+      image: vpImage,
+      description: "We aim for excellence—but we’ll settle for passing attendance and decent chai.",
+    },
+    {
+      name: "Secretary",
+      image: secretaryImage,
+      description: "This society runs on passion, chaos, and last-minute WhatsApp messages.",
+    },
+  ];
 
-const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   const prevSlide = () => {
     setIndex((prev) => (prev === 0 ? teamMembers.length - 1 : prev - 1));
@@ -108,9 +108,8 @@ const [index, setIndex] = useState(0);
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-16 flex flex-col md:flex-row items-center gap-10">
         <div
-          className={`max-w-xl flex flex-col gap-6 transition-all duration-[1500ms] ${
-            show ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-          }`}
+          className={`max-w-xl flex flex-col gap-6 transition-all duration-[1500ms] ${show ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+            }`}
         >
           <span className="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-md w-fit">
             INSPIRING THE FUTURE OF COMPUTING AT
@@ -130,11 +129,11 @@ const [index, setIndex] = useState(0);
 
           <div className="flex flex-wrap gap-3">
             <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:cursor-pointer">
-                <NavLink to="/joinus" >Join Us</NavLink>
-              
+              <NavLink to="/joinus" >Join Us</NavLink>
+
             </button>
             <button className="border border-blue-600 text-blue-600 px-5 py-2 rounded-lg cursor-pointer">
-                <NavLink to="/about" >Know More</NavLink>
+              <NavLink to="/about" >Know More</NavLink>
             </button>
           </div>
 
@@ -150,9 +149,8 @@ const [index, setIndex] = useState(0);
 
         <img
           src={techguy}
-          className={`w-full max-w-sm sm:max-w-md md:max-w-xl transition-all duration-[1500ms] ${
-            show ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full max-w-sm sm:max-w-md md:max-w-xl transition-all duration-[1500ms] ${show ? "opacity-100" : "opacity-0"
+            }`}
         />
       </section>
 
@@ -191,79 +189,79 @@ const [index, setIndex] = useState(0);
 
       {/* EVENTS */}
       <section>
-                <header className="text-5xl font-bold text-center">Check Out Our Recent Events</header>
-                <div className="w-full m-4 sm:m-16 border-y-2 py-6 ">
-                    <Swiper
-                        modules={[Autoplay]}
-                        loop
-                        slidesPerView={3}
-                        spaceBetween={16}
-                        speed={6000}
-                        autoplay={{
-                            delay: 0,
-                            disableOnInteraction: false,
-                        }}
-                        allowTouchMove={false}
-                        className="h-50 md:h-75 lg:h-100"
-                    >
-                        {events.map((event, index) => (
-                            <SwiperSlide key={index}>
-                                <img
-                                    src={event.image}
-                                    alt={`slide-${index}`}
-                                    className="w-full h-full object-cover"
-                                />
+        <header className="text-5xl font-bold text-center">Check Out Our Recent Events</header>
+        <div className="w-full m-4 sm:m-16 border-y-2 py-6 ">
+          <Swiper
+            modules={[Autoplay]}
+            loop
+            slidesPerView={3}
+            spaceBetween={16}
+            speed={6000}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            allowTouchMove={false}
+            className="h-50 md:h-75 lg:h-100"
+          >
+            {events.map((event, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={event.image}
+                  alt={`slide-${index}`}
+                  className="w-full h-full object-cover"
+                />
 
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-            </section>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
 
       {/* Core Team */}
       <section className="bg-gray-100 py-16 px-4 relative">
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">
-        CORE TEAM
-      </h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">
+          CORE TEAM
+        </h2>
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 relative">
-        
-        {/* Left Arrow */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-3 rounded-full"
-        >
-          <ChevronLeft size={24} />
-        </button>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 relative">
 
-        {/* Content */}
-        <div className="w-full md:w-[65%] min-h-[200px] bg-gray-300 rounded-2xl flex flex-col justify-center items-center p-6">
-          <h3 className="text-2xl font-semibold mb-2">
-            {teamMembers[index].name}
-          </h3>
-          <p className="text-gray-700 text-center italic">
-            "
-            {teamMembers[index].description}
-            "
-          </p>
+          {/* Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-3 rounded-full"
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          {/* Content */}
+          <div className="w-full md:w-[65%] min-h-[200px] bg-gray-300 rounded-2xl flex flex-col justify-center items-center p-6">
+            <h3 className="text-2xl font-semibold mb-2">
+              {teamMembers[index].name}
+            </h3>
+            <p className="text-gray-700 text-center italic">
+              "
+              {teamMembers[index].description}
+              "
+            </p>
+          </div>
+
+          {/* Image */}
+          <img
+            src={teamMembers[index].image}
+            className="w-48 sm:w-60 md:w-72 rounded-lg transition-all duration-300"
+            alt={teamMembers[index].name}
+          />
+
+          {/* Right Arrow */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-3 rounded-full"
+          >
+            <ChevronRight size={24} />
+          </button>
         </div>
-
-        {/* Image */}
-        <img
-          src={teamMembers[index].image}
-          className="w-48 sm:w-60 md:w-72 rounded-lg transition-all duration-300"
-          alt={teamMembers[index].name}
-        />
-
-        {/* Right Arrow */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white p-3 rounded-full"
-        >
-          <ChevronRight size={24} />
-        </button>
-      </div>
-    </section>
+      </section>
 
       <section className="resources-page">
         <h1 className="heading">
